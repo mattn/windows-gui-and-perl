@@ -1,0 +1,11 @@
+#include <windows.h>
+#include "resource.h" 
+ID_MENU MENU DISCARDABLE
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "I'm &Hungry!", IDM_HUNGRY
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit", IDM_EXIT
+    END
+END

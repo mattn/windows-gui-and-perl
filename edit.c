@@ -11,7 +11,8 @@ static HWND hEdit = NULL;
 
 extern void boot_DynaLoader (pTHX_ CV* cv);
 
-void XS_add_text(pTHX_ CV* cv) {
+void
+XS_add_text(pTHX_ CV* cv) {
   dXSARGS;
   STRLEN n_a;
   char* text = (char*) SvPV(ST(0), n_a);
@@ -25,7 +26,8 @@ xs_init(pTHX) {
   newXS("DynaLoader::boot_DynaLoader", boot_DynaLoader, __FILE__);
 }
 
-void hungly() {
+void
+hungly() {
   if (!my_perl) {
     PERL_SYS_INIT3(&my_argc, &my_argv, &my_env);
     my_perl = perl_alloc();

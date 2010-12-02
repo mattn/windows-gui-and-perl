@@ -14,7 +14,7 @@ my $res = $menu->scrape(
 	URI->new("http://www.mcdonalds.co.jp/menu/regular/index.html"));
 
 for (@{$res->{foods}}) {
-  set_text(encode('cp932', $_->{title}) . "\r\n");
-  set_text("\t" . $_->{link} . "\r\n");
+  add_text(encode('cp932', $_->{title}) . "\r\n");
+  add_text("\t" . $_->{link} . "\r\n");
 }
 

@@ -11,7 +11,7 @@ static HWND hEdit = NULL;
 
 extern void boot_DynaLoader (pTHX_ CV* cv);
 
-void XS_set_text(pTHX_ CV* cv) {
+void XS_add_text(pTHX_ CV* cv) {
   dXSARGS;
   STRLEN n_a;
   char* text = (char*) SvPV(ST(0), n_a);
@@ -42,7 +42,7 @@ void hungly() {
   perl_parse(my_perl, xs_init, my_argc, my_argv, my_env);
   perl_run(my_perl);
 
-  newXSproto("set_text", XS_set_text, __FILE__, "$");
+  newXSproto("add_text", XS_add_text, __FILE__, "$");
 
   snprintf(command, sizeof(command), "do q\"%s\"", path);
   eval_pv(command, TRUE);
